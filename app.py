@@ -100,7 +100,7 @@ def step3_llm_auto_rater(data, key):
         
     genai.configure(api_key=key)
     # Using flash for fast, cheap auto-rating
-    model = genai.GenerativeModel('gemini-1.5-flash') 
+    model = genai.GenerativeModel('gemini-2.5-flash') 
     
     prompt = f"""
     You are an expert LLM evaluator. Grade the following response based on the prompt.
