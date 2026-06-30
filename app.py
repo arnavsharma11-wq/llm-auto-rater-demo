@@ -26,9 +26,23 @@ DEMO_DATA = [
 
 # --- Sidebar / Auth ---
 st.sidebar.header("Configuration")
+#api_key = st.sidebar.text_input(
+#    "Gemini API Key", 
+#    value="AIzaSyAbFOVXqIw3Okz3eu7W8TnZr5i1ouNVDt0", # Provided key for demo
+#    type="password"
+#)
+#api_key = st.sidebar.text_input(
+#    "Gemini API Key", 
+#    value="", 
+#    type="password",
+#    help="Enter your Gemini API key to run the pipeline."
+#)
+# Pull from Streamlit secrets if available, otherwise leave blank for manual entry
+default_key = st.secrets.get("GEMINI_API_KEY", "")
+
 api_key = st.sidebar.text_input(
     "Gemini API Key", 
-    value="AIzaSyAbFOVXqIw3Okz3eu7W8TnZr5i1ouNVDt0", # Provided key for demo
+    value=default_key, 
     type="password"
 )
 
